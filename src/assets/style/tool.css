@@ -1,3 +1,16 @@
+#buildings-wrapper {
+  display: flex;       /* 横並びにする */
+  flex-direction: row; /* デフォルトで横並びですが明示的に */
+  gap: 20px;          /* 建物と建物の間のスキマ */
+  align-items: flex-start; /* 中身の高さが違っても上に揃える */
+}
+
+/* 念のため container 自体の幅を固定するか調整 */
+.building-container {
+  width: 180px; /* 適切な幅に設定 */
+}
+
+
 /* 親要素：はみ出た中身を隠す設定 */
 .building-container {
   display: flex;
