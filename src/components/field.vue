@@ -2,28 +2,28 @@
 import { ref } from "vue";
 import { useClick } from "@/composables/click";
 
-const items = ref([
-  { id: 1, value: 10 },
-  { id: 2, value: 20 }
+const moneys = ref([
+  { id: 1, worth: 10 },
+  { id: 2, worth: 20 }
 ]);
 
 const { collect } = useClick();
 
-function onClick(item) {
-  collect(item);
-  items.value = items.value.filter(i => i.id !== item.id);
+function onClick(money) {
+  collect(money); 
+  moneys.value = moneys.value.filter(m => m.id !== money.id);
 }
 </script>
 
 <template>
-  <div>
+  <div class="field">
     <div
-      v-for="item in items"
-      :key="item.id"
-      @click="onClick(item)"
+      v-for="money in moneys"
+      :key="money.id"
+      @click="onClick(money)"
       class="money"
     >
-      💰 {{ item.value }}
+      💰 {{ money.worth }}
     </div>
   </div>
 </template>
