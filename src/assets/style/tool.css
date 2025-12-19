@@ -1,0 +1,45 @@
+/* 親要素：はみ出た中身を隠す設定 */
+.building-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* これが重要！枠外に出たメニューを隠します */
+  width: 200px;     /* サイズは適宜調整 */
+}
+
+.main-button {
+  z-index: 2;       /* ボタンをメニューより手前に持ってくる */
+  background: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tool {
+  z-index: 1;       /* ボタンの裏側（下の層）に配置 */
+  background: #eee;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* --- アニメーションの設定 --- */
+.drawer-enter-active,
+.drawer-leave-active {
+  transition: transform 0.4s ease; /* 0.4秒かけて動く */
+}
+
+/* 隠れている時の状態（真上に自分の高さ分だけズレている） */
+.drawer-enter-from,
+.drawer-leave-to {
+  transform: translateY(-100%); 
+}
+
+/* 出てきた時の状態（元の位置） */
+.drawer-enter-to,
+.drawer-leave-from {
+  transform: translateY(0);
+}
+
+.upgrade-btn{
+  border:2px solid #333;
+}
