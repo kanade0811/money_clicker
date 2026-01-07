@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { useClick } from "@/composables/click";
+import { useClick } from "@/composables/button/click";
 
 const items = ref([
   { id: 1, value: 10 },

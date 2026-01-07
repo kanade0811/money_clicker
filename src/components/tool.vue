@@ -45,6 +45,6 @@
 <script setup>
 import '@/assets/style/tool.css';
 import { globals } from '@/globals';
-import { worth } from '@/conposables/button/worth.js';
-import { spawn } from '@/conposables/button/spawn.js';
+import { worth } from '@/composables/button/worth.js';
+import { spawn } from '@/composables/button/spawn.js';
 </script>
