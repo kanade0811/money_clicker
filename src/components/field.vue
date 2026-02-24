@@ -1,29 +1,53 @@
 <script setup>
-import { ref } from "vue";
-import { useClick } from "@/composables/click";
+import { ref, onMounted } from "vue";
+import { useMoney } from "@/composables/button/money";
 
-const items = ref([
-  { id: 1, value: 10 },
-  { id: 2, value: 20 }
-]);
+console.log("field.vue is loaded");
 
-const { collect } = useClick();
+const fieldRef = ref(null);
+const { moneys, tapMoney } = useMoney();
 
-function onClick(item) {
-  collect(item);
-  items.value = items.value.filter(i => i.id !== item.id);
-}
+onMounted(() => {
+  spawnMoney(fieldRef);
+});
 </script>
 
 <template>
-  <div>
+  <div class="field" ref="fieldRef">
     <div
-      v-for="item in items"
-      :key="item.id"
-      @click="onClick(item)"
+      v-for="money in moneys"
+      :key="money.id"
       class="money"
+      :style="{ left: money.x + 'px', top: money.y + 'px' }"
     >
-      💰 {{ item.value }}
+      💰
     </div>
   </div>
 </template>
+
+<style scoped>
+.field {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.money {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: gold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 0 10px orange;
+}
+
+
+
+</style>
