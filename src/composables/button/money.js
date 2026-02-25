@@ -19,26 +19,24 @@ export function useMoney() {
     });
   }
 
-  return { moneys, spawnMoney };
-}
-
-
-  
-  // タップされたとき
   const tapMoney = (id) => {
     globals.wallet += globals.worth;
     moneys.value = moneys.value.filter(m => m.id !== id);
   };
 
-  // spawn の値に応じて定期生成
-  setInterval(() => {
-    for (let i = 0; i < globals.spawn; i++) {
-      spawnMoney();
-    }
-  }, 1000);
+  // 定期生成
+  const startSpawn = (fieldRef) => {
+    setInterval(() => {
+      for (let i = 0; i < globals.spawn; i++) {
+        spawnMoney(fieldRef);
+      }
+    }, 1000);
+  };
 
   return {
     moneys,
+    spawnMoney,
     tapMoney,
+    startSpawn
   };
 }

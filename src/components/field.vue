@@ -5,10 +5,10 @@ import { useMoney } from "@/composables/button/money";
 console.log("field.vue is loaded");
 
 const fieldRef = ref(null);
-const { moneys, tapMoney } = useMoney();
+const { moneys, tapMoney, startSpawn } = useMoney();
 
 onMounted(() => {
-  spawnMoney(fieldRef);
+  startSpawn(fieldRef);
 });
 </script>
 
@@ -18,8 +18,9 @@ onMounted(() => {
       v-for="money in moneys"
       :key="money.id"
       class="money"
-      :style="{ left: money.x + 'px', top: money.y + 'px' }"
-    >
+       :style="{ left: money.x + 'px', top: money.y + 'px' }"
+      @click="tapMoney(money.id)"
+      >
       💰
     </div>
   </div>
