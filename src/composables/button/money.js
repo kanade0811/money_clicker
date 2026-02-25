@@ -1,11 +1,15 @@
 import { ref } from "vue";
 import { globals } from "@/globals";
 
+let nextId = 1; 
+
 export function useMoney() {
   const moneys = ref([]);
 
   function spawnMoney(fieldRef) {
     const field = fieldRef.value;
+    if (!field) return;
+
     const width = field.clientWidth;
     const height = field.clientHeight;
 
@@ -13,7 +17,7 @@ export function useMoney() {
     const y = Math.random() * (height - 60);
 
     moneys.value.push({
-      id: Date.now(),
+      id: nextId++, 
       x,
       y
     });
@@ -24,7 +28,6 @@ export function useMoney() {
     moneys.value = moneys.value.filter(m => m.id !== id);
   };
 
-  // 定期生成
   const startSpawn = (fieldRef) => {
     setInterval(() => {
       for (let i = 0; i < globals.spawn; i++) {
@@ -35,7 +38,6 @@ export function useMoney() {
 
   return {
     moneys,
-    spawnMoney,
     tapMoney,
     startSpawn
   };
