@@ -5,7 +5,7 @@ import { useMoney } from "@/composables/button/money";
 console.log("field.vue is loaded");
 
 const fieldRef = ref(null);
-const { moneys, tapMoney } = useMoney();
+const { moneys, tapMoney, startSpawn } = useMoney();
 
 onMounted(() => {
   spawnMoney(fieldRef);
