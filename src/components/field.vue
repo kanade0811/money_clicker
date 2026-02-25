@@ -8,7 +8,7 @@ const fieldRef = ref(null);
 const { moneys, tapMoney, startSpawn } = useMoney();
 
 onMounted(() => {
-  spawnMoney(fieldRef);
+  startSpawn(fieldRef);
 });
 </script>
 
@@ -18,8 +18,9 @@ onMounted(() => {
       v-for="money in moneys"
       :key="money.id"
       class="money"
-      :style="{ left: money.x + 'px', top: money.y + 'px' }"
-    >
+       :style="{ left: money.x + 'px', top: money.y + 'px' }"
+      @click="tapMoney(money.id)"
+      >
       💰
     </div>
   </div>
