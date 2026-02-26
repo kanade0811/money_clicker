@@ -38,7 +38,7 @@ import { spawn } from '@/composables/button/spawn'
         <div class="tool" v-if="spawn.isOpen">
           今のレベル:{{ spawn.level }} <br>
           アップグレード費用:{{ spawn.cost }} <br>
-          収入が{{ globals.spawn }}→{{ globals.spawn * spawn.gain }}に
+          スポーン頻度が{{ globals.spawn }}→{{ globals.spawn * spawn.gain }}に
           <div class="upgrade-button" @click=" spawn.boost ">
             グレードアップ
           </div>
