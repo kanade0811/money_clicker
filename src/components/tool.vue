@@ -48,10 +48,3 @@ import { globals } from '@/globals'
 import { worth } from '@/composables/button/worth'
 import { spawn } from '@/composables/button/spawn'
 </script>
-
-<style scoped>
-.tool {
-  background: #f5f5f5;
-  padding: 8px;
-}
-</style>

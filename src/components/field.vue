@@ -14,13 +14,8 @@ onMounted(() => {
 
 <template>
   <div class="field" ref="fieldRef">
-    <div
-      v-for="money in moneys"
-      :key="money.id"
-      class="money"
-       :style="{ left: money.x + 'px', top: money.y + 'px' }"
-      @click="tapMoney(money.id)"
-      >
+    <div v-for="money in moneys" :key=" money.id " class="money"
+      :style=" { left: money.x + 'px', top: money.y + 'px' } " @click="tapMoney(money.id)">
       💰
     </div>
   </div>
@@ -28,11 +23,12 @@ onMounted(() => {
 
 <style scoped>
 .field {
-  position: relative;
-  flex: 1;
-  width: 100%;
-  overflow: hidden;
-  background: #fff;
+  position: fixed;
+  bottom: 0;
+  height: 80vh;  
+  width: calc(100vw - 14px);
+  margin: 5px;
+  border: 2px solid #333;
 }
 
 .money {
@@ -48,7 +44,4 @@ onMounted(() => {
   cursor: pointer;
   box-shadow: 0 0 10px orange;
 }
-
-
-
 </style>
