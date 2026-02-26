@@ -19,7 +19,7 @@ import { spawn } from '@/composables/button/spawn'
         worth
       </div>
       <Transition name="drawer">
-        <div class="tool" v-if="worth.isOpen">
+        <div class="drawer-box" v-if="worth.isOpen">
           今のレベル:{{ worth.level }} <br>
           アップグレード費用:{{ worth.cost }} <br>
           収入が{{ globals.worth }}→{{ globals.worth * worth.gain }}に
@@ -35,7 +35,7 @@ import { spawn } from '@/composables/button/spawn'
         spawn
       </div>
       <Transition name="drawer">
-        <div class="tool" v-if="spawn.isOpen">
+        <div class="drawer-box" v-if="spawn.isOpen">
           今のレベル:{{ spawn.level }} <br>
           アップグレード費用:{{ spawn.cost }} <br>
           スポーン頻度が{{ globals.spawn }}→{{ globals.spawn * spawn.gain }}に
