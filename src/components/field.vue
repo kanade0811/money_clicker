@@ -1,4 +1,5 @@
 <script setup>
+import '@/assets/style/field.css'
 import { ref, onMounted } from "vue";
 import { useMoney } from "@/composables/button/money";
 

@@ -1,3 +1,10 @@
+<script setup>
+import '@/assets/style/tool.css'
+import { globals } from '@/globals'
+import { worth } from '@/composables/button/worth'
+import { spawn } from '@/composables/button/spawn'
+</script>
+
 <template>
   <div id="tool">
     <div id="wallet">
@@ -16,7 +23,7 @@
             今のレベル:{{ worth.level }} <br>
             アップグレード費用:{{ worth.cost }} <br>
             収入が{{ globals.worth }}→{{ globals.worth * worth.gain }}に
-            <div class="upgrade-btn" @click="worth.do">
+            <div class="upgrade-btn" @click=" worth.do ">
               グレードアップ
             </div>
           </div>
@@ -32,7 +39,7 @@
             今のレベル:{{ spawn.level }} <br>
             アップグレード費用:{{ spawn.cost }} <br>
             収入が{{ globals.spawn }}→{{ globals.spawn * spawn.gain }}に
-            <div class="upgrade-btn" @click="spawn.do">
+            <div class="upgrade-btn" @click=" spawn.do ">
               グレードアップ
             </div>
           </div>
@@ -41,10 +48,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import '@/assets/style/tool.css'
-import { globals } from '@/globals'
-import { worth } from '@/composables/button/worth'
-import { spawn } from '@/composables/button/spawn'
-</script>
