@@ -1,5 +1,6 @@
 <script setup>
 import '@/assets/style/tools/hamburger.css'
+import '@/assets/style/tools/wallet.css'
 import { globals } from '@/globals'
 import { worth } from '@/composables/button/worth'
 import { spawn } from '@/composables/button/spawn'
@@ -17,13 +18,13 @@ import { spawn } from '@/composables/button/spawn'
     </div>
   </label>
 
-  <!-- 
   <div id="wallet">
     所持金：{{ globals.wallet }}<br>
     1つ当たりの収入：{{ globals.worth }}<br>
     お金のスポーン頻度：{{ globals.spawn }}
   </div>
 
+<!--   
   <div id="buildings-wrapper">
     <div class="building-container">
       <div class="main-button" @click=" worth.toggle ">
@@ -56,6 +57,5 @@ import { spawn } from '@/composables/button/spawn'
         </div>
       </Transition>
     </div>
-  </div>
-  -->
+  </div> -->
 </template>
