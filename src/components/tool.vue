@@ -1,5 +1,5 @@
 <script setup>
-import '@/assets/style/tool.css'
+import '@/assets/style/tools/hamburger.css'
 import { globals } from '@/globals'
 import { worth } from '@/composables/button/worth'
 import { spawn } from '@/composables/button/spawn'
