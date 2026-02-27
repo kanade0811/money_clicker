@@ -7,6 +7,17 @@ import { spawn } from '@/composables/button/spawn'
 
 <template>
 
+  <!-- ラベル内をチェックボックスとする -->
+  <label class="menu-label">
+    <input type="checkbox" class="menu-checkbox">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </label>
+
+  <!-- 
   <div id="wallet">
     所持金：{{ globals.wallet }}<br>
     1つ当たりの収入：{{ globals.worth }}<br>
@@ -15,7 +26,7 @@ import { spawn } from '@/composables/button/spawn'
 
   <div id="buildings-wrapper">
     <div class="building-container">
-      <div class="main-button" @click="worth.toggle">
+      <div class="main-button" @click=" worth.toggle ">
         worth
       </div>
       <Transition name="drawer">
@@ -31,7 +42,7 @@ import { spawn } from '@/composables/button/spawn'
     </div>
 
     <div class="building-container">
-      <div class="main-button" @click="spawn.toggle">
+      <div class="main-button" @click=" spawn.toggle ">
         spawn
       </div>
       <Transition name="drawer">
@@ -46,4 +57,5 @@ import { spawn } from '@/composables/button/spawn'
       </Transition>
     </div>
   </div>
+  -->
 </template>
