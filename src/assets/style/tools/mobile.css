@@ -1,0 +1,63 @@
+@media (max-width: 500px) {
+  #buildings-wrapper {
+    position: fixed;
+    display: flex;
+
+    height: 90%;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(204, 204, 204, 0.7);
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    z-index: 10;
+  }
+
+  .building-container {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+  }
+  
+  .main-button {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .drawer {
+    background: #eee;
+    padding: 10px;
+    border: 3px solid #ccc;
+  }
+  
+  .drawer p {
+    margin: 0;
+  }
+
+  /* 偶数番目（2, 4, 6行目）の文章だけを中央にする */
+  .drawer p:nth-child(even) {
+    padding: 0px 30px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    align-self: center;
+    font-size: 1.1rem;
+
+    width: fit-content;
+    border-bottom: 2px solid #333;
+  }
+
+  .upgrade-button {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5px 30px;
+    border: 2px solid #333;
+    cursor: pointer;
+  }
+}
