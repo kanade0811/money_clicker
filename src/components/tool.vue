@@ -1,5 +1,4 @@
 <script setup>
-import '@/assets/style/tools/hamburger.css'
 import '@/assets/style/tools/wallet.css'
 import '@/assets/style/tools/building.css'
 import { globals } from '@/globals'
