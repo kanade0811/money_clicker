@@ -74,11 +74,11 @@
   align-items: center;
   justify-content: center;
 
+  width: 50px;
+  height: 80px;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  width: 50px;
-  height: 80px;
 
   background-color: rgba(100, 100, 100, 0.7);
   /* 背景の右のみ角を丸くする */
@@ -121,6 +121,7 @@
   }
   body:has(.menu-checkbox:checked) .menu {
     left: calc(100% - 50px);
+    /* シェブロンを内側にする */
     border-radius: 10px 0 0 10px;
   }
 }
