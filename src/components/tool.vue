@@ -1,9 +1,5 @@
 <script setup>
-import '@/assets/style/tools/wallet.css'
-import '@/assets/style/tools/toolbar/building.css'
-import '@/assets/style/tools/toolbar/chevron.css'
-import '@/assets/style/tools/toolbar/mobile.css'
-import '@/assets/style/tools/toolbar/pc.css'
+import '@/assets/style/tools/main.css'
 
 import { globals } from '@/globals'
 import { worth } from '@/composables/button/worth'

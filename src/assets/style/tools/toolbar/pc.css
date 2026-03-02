@@ -1,8 +1,12 @@
 /* パソコン */
+:root{
+  --width:400px;
+}
+
 @media (min-width: 800px) {
   #buildings-wrapper {
-    width: 400px;
-    left: -400px;
+    width: var(--width);
+    left: calc(-1*var(--width));
   }
   body:has(.menu-checkbox:checked) #buildings-wrapper {
     left: 0px;
@@ -12,6 +16,6 @@
     left: 0;
   }
   body:has(.menu-checkbox:checked) .menu {
-    left: 400px;
+    left: var(--width);
   }
 }
