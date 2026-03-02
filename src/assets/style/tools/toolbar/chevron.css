@@ -1,0 +1,41 @@
+.menu {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+
+  background-color: rgba(100, 100, 100, 0.7);
+  /* 背景の右のみ角を丸くする */
+  border-radius: 0 10px 10px 0;
+  z-index: 2000;
+  cursor: pointer;
+
+  transition: left 0.5s ease;
+}
+
+.menu-checkbox {
+  display: none;
+}
+
+.chevron {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 10px;
+
+  border-top: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+.menu-checkbox:checked + .chevron {
+  transform: rotate(-135deg);
+}

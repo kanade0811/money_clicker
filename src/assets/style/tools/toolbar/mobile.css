@@ -1,0 +1,19 @@
+/* スマホor幅が小さいPC */
+@media (max-width: 800px) {
+  #buildings-wrapper {
+    width: 100%;
+    left: -100%;
+  }
+  body:has(.menu-checkbox:checked) #buildings-wrapper {
+    left: 0;
+  }
+
+  .menu {
+    left: 0;
+  }
+  body:has(.menu-checkbox:checked) .menu {
+    left: calc(100% - 50px);
+    /* シェブロンを内側にする */
+    border-radius: 10px 0 0 10px;
+  }
+}

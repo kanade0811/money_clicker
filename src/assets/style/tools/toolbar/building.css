@@ -1,0 +1,64 @@
+/* このコード、幅が400pxより小さくなると破綻します */
+#buildings-wrapper {
+  position: fixed;
+  display: flex;
+
+  height: 100%;
+  padding-left: 0;
+  bottom: 0;
+  background: rgba(100, 100, 100, 0.8);
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  z-index: 10;
+
+  transition: left 0.5s ease;
+}
+
+.building-container {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+}
+
+.main-button {
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.drawer {
+  background: #eee;
+  padding: 10px;
+  border: 3px solid #ccc;
+}
+
+.drawer p {
+  margin: 0;
+}
+
+/* 数字部分は文章を中央揃えに */
+.drawer p:nth-child(even) {
+  padding: 0px 30px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  align-self: center;
+  font-size: 1.1rem;
+
+  width: fit-content;
+  border-bottom: 2px solid #333;
+}
+
+.upgrade-button {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 5px 30px;
+  border: 2px solid #333;
+  cursor: pointer;
+}

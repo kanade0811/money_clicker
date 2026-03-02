@@ -1,0 +1,17 @@
+/* パソコン */
+@media (min-width: 800px) {
+  #buildings-wrapper {
+    width: 400px;
+    left: -400px;
+  }
+  body:has(.menu-checkbox:checked) #buildings-wrapper {
+    left: 0px;
+  }
+
+  .menu {
+    left: 0;
+  }
+  body:has(.menu-checkbox:checked) .menu {
+    left: 400px;
+  }
+}

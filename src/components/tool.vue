@@ -1,6 +1,10 @@
 <script setup>
 import '@/assets/style/tools/wallet.css'
-import '@/assets/style/tools/building.css'
+import '@/assets/style/tools/toolbar/building.css'
+import '@/assets/style/tools/toolbar/chevron.css'
+import '@/assets/style/tools/toolbar/mobile.css'
+import '@/assets/style/tools/toolbar/pc.css'
+
 import { globals } from '@/globals'
 import { worth } from '@/composables/button/worth'
 import { spawn } from '@/composables/button/spawn'
