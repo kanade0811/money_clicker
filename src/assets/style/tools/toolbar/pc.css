@@ -4,6 +4,10 @@
 }
 
 @media (min-width: 800px) {
+  #wallet{
+    margin-left: var(--wallet-margin-left);
+  }
+
   #buildings-wrapper {
     width: var(--toolbar-width);
     left: calc(-1 * var(--toolbar-width));

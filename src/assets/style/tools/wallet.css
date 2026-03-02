@@ -1,10 +1,7 @@
 #wallet {
   position: relative;
   width: var(--box-width);
-  margin-top: var(--wallet-padding-top);
-  margin-left: 50%;
-  transform: translateX(-50%);
-
+  margin-top: var(--wallet-margin-top);
 
   text-align: left;
   background: rgba(250, 250, 250, 0.8);

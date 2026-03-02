@@ -1,5 +1,10 @@
 /* スマホor幅が小さいPC */
 @media (max-width: 800px) {
+  #wallet {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
   #buildings-wrapper {
     width: 100%;
     left: -100%;

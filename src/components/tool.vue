@@ -19,6 +19,8 @@ import { spawn } from '@/composables/button/spawn'
   </label>
 
   <div id="buildings-wrapper">
+    <div class="wallet-space"></div>
+    
     <div class="building-container">
       <div class="main-button">
         worth
