@@ -1,12 +1,12 @@
 /* パソコン */
-:root{
-  --width:400px;
+:root {
+  --toolbar-width: 400px;
 }
 
 @media (min-width: 800px) {
   #buildings-wrapper {
-    width: var(--width);
-    left: calc(-1*var(--width));
+    width: var(--toolbar-width);
+    left: calc(-1 * var(--toolbar-width));
   }
   body:has(.menu-checkbox:checked) #buildings-wrapper {
     left: 0px;
@@ -16,6 +16,6 @@
     left: 0;
   }
   body:has(.menu-checkbox:checked) .menu {
-    left: var(--width);
+    left: var(--toolbar-width);
   }
 }

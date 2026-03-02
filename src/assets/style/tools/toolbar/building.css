@@ -19,7 +19,7 @@
 
 .building-container {
   display: flex;
-  width: 300px;
+  width: var(--box-width);
   flex-direction: column;
 }
 
