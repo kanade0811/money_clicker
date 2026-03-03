@@ -48,7 +48,7 @@ import { spawn } from '@/composables/button/spawn'
         <p>アップグレード費用</p>
         <p>{{ spawn.cost }}</p>
         <p>スポーン頻度の変化</p>
-        <p>{{ globals.worth }} → {{ globals.worth * spawn.gain }}</p>
+        <p>{{ globals.spawn }} → {{ globals.spawn * spawn.gain }}</p>
         <div class="upgrade-button" @click=" spawn.boost ">
           グレードアップ
         </div>

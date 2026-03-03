@@ -1,6 +1,6 @@
 @import '@/assets/style/tools/root.css';
 @import '@/assets/style/tools/wallet.css';
-@import '@/assets/style/tools/toolbar/building.css';
-@import '@/assets/style/tools/toolbar/chevron.css';
-@import '@/assets/style/tools/toolbar/mobile.css';
-@import '@/assets/style/tools/toolbar/pc.css';
+@import '@/assets/style/tools/building.css';
+@import '@/assets/style/tools/chevron.css';
+@import '@/assets/style/tools/mobile.css';
+@import '@/assets/style/tools/pc.css';
