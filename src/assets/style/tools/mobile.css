@@ -5,11 +5,11 @@
     transform: translateX(-50%);
   }
 
-  #buildings-wrapper {
+  #toolbar {
     width: 100%;
     left: -100%;
   }
-  body:has(.menu-checkbox:checked) #buildings-wrapper {
+  body:has(.menu-checkbox:checked) #toolbar {
     left: 0;
   }
 

@@ -8,11 +8,11 @@
     margin-left: var(--wallet-margin-left);
   }
 
-  #buildings-wrapper {
+  #toolbar {
     width: var(--toolbar-width);
     left: calc(-1 * var(--toolbar-width));
   }
-  body:has(.menu-checkbox:checked) #buildings-wrapper {
+  body:has(.menu-checkbox:checked) #toolbar {
     left: 0px;
   }
 

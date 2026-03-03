@@ -1,20 +1,12 @@
 /* このコード、幅が400pxより小さくなると破綻します */
-#buildings-wrapper {
+#toolbar {
   position: fixed;
-  display: flex;
-
   height: 100%;
   padding-left: 0;
   bottom: 0;
   background: rgba(100, 100, 100, 0.8);
 
-  flex-direction: column;
-  /* justify-content: start; */
-  justify-content: flex-start;
-  align-items: center;
-  gap: 50px;
   z-index: 10;
-
   transition: left 0.5s ease;
 }
 
@@ -23,6 +15,18 @@
   width: 100%;
   top: 0;
   height: calc(var(--wallet-height) + 2 * var(--wallet-margin-top));
+}
+
+#buildings-wrapper {
+  position: absolute;
+  display: flex;
+  height: calc(100% - (var(--wallet-height) + 2 * var(--wallet-margin-top)));
+  width: 100%;
+  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 11;
 }
 
 .building-container {
