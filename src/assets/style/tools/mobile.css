@@ -21,4 +21,8 @@
     /* シェブロンを内側にする */
     border-radius: 10px 0 0 10px;
   }
+
+  #credit{
+    display: none;
+  }
 }

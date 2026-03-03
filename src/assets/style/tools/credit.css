@@ -1,0 +1,10 @@
+#credit {
+  position: absolute;
+  height: var(--wallet-height);
+  width: var(--box-width);
+  right: 25px;
+  top: var(--wallet-margin-top);
+  text-align: left;
+  background: rgba(250, 250, 250, 0.8);
+  z-index: 20;
+}

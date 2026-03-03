@@ -58,4 +58,10 @@ import { spawn } from '@/composables/button/spawn'
     </div>
   </div>
 
+  <div id="credit">
+    クレジット～ただのスペース埋め～<br>
+    製作者：奏、はし<br>
+    (ここに画像とか入れるか？の気持ち)
+  </div>
+
 </template>
