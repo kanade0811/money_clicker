@@ -7,19 +7,27 @@ console.log("field.vue is loaded");
 const fieldRef = ref(null);
 const { moneys, tapMoney, startSpawn } = useMoney();
 
+const dragging = ref(false);// ←追加
+
 onMounted(() => {
   startSpawn(fieldRef);
 });
 </script>
 
 <template>
-  <div class="field" ref="fieldRef">
+  <div class="field" ref="fieldRef"
+  @pointerdown="dragging = true" 
+  @pointerup="dragging = false"
+  @pointerleave="dragging = false">
+
     <div
       v-for="money in moneys"
       :key="money.id"
       class="money"
+      draggable="false"
        :style="{ left: money.x + 'px', top: money.y + 'px' }"
       @click="tapMoney(money.id)"
+      @pointerenter="dragging && tapMoney(money.id)" 
       >
       💰
     </div>
@@ -33,10 +41,15 @@ onMounted(() => {
   width: 100%;
   overflow: hidden;
   background: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
 }
 
 .money {
   position: absolute;
+  user-select: none;
+  -webkit-user-select: none;
   width: 60px;
   height: 60px;
   background: gold;

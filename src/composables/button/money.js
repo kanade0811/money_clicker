@@ -2,11 +2,13 @@ import { ref } from "vue";
 import { globals } from "@/globals";
 
 let nextId = 1; 
+const MAX_MONEY = 50;
 
 export function useMoney() {
   const moneys = ref([]);
 
-  function spawnMoney(fieldRef) {
+  function spawnMoney(fieldRef)  {
+  if (moneys.value.length >= MAX_MONEY) return;
     const field = fieldRef.value;
     if (!field) return;
 
