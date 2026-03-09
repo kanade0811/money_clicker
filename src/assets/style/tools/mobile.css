@@ -1,0 +1,28 @@
+/* スマホor幅が小さいPC */
+@media (max-width: 800px) {
+  #wallet {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #toolbar {
+    width: 100%;
+    left: -100%;
+  }
+  body:has(.menu-checkbox:checked) #toolbar {
+    left: 0;
+  }
+
+  .menu {
+    left: 0;
+  }
+  body:has(.menu-checkbox:checked) .menu {
+    left: calc(100% - 50px);
+    /* シェブロンを内側にする */
+    border-radius: 10px 0 0 10px;
+  }
+
+  #credit{
+    display: none;
+  }
+}
