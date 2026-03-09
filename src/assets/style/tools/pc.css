@@ -1,0 +1,25 @@
+/* パソコン */
+:root {
+  --toolbar-width: 400px;
+}
+
+@media (min-width: 800px) {
+  #wallet{
+    margin-left: var(--wallet-margin-left);
+  }
+
+  #toolbar {
+    width: var(--toolbar-width);
+    left: calc(-1 * var(--toolbar-width));
+  }
+  body:has(.menu-checkbox:checked) #toolbar {
+    left: 0px;
+  }
+
+  .menu {
+    left: 0;
+  }
+  body:has(.menu-checkbox:checked) .menu {
+    left: var(--toolbar-width);
+  }
+}

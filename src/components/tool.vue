@@ -1,57 +1,67 @@
-<template>
-  <div id="tool">
-    <div id="wallet">
-      所持金：{{ globals.wallet }}<br>
-      1つ当たりの収入：{{ globals.worth }}<br>
-      お金のスポーン頻度：{{ globals.spawn }}
-    </div>
-
-    <div id="buildings-wrapper">
-      <div class="building-container">
-        <div class="main-button" @click="worth.isOpen = !worth.isOpen">
-          worth
-        </div>
-        <Transition name="drawer">
-          <div class="tool" v-if="worth.isOpen">
-            今のレベル:{{ worth.level }} <br>
-            アップグレード費用:{{ worth.cost }} <br>
-            収入が{{ globals.worth }}→{{ globals.worth * worth.gain }}に
-            <div class="upgrade-btn" @click="worth.do">
-              グレードアップ
-            </div>
-          </div>
-        </Transition>
-      </div>
-
-      <div class="building-container">
-        <div class="main-button" @click="spawn.isOpen = !spawn.isOpen">
-          spawn
-        </div>
-        <Transition name="drawer">
-          <div class="tool" v-if="spawn.isOpen">
-            今のレベル:{{ spawn.level }} <br>
-            アップグレード費用:{{ spawn.cost }} <br>
-            収入が{{ globals.spawn }}→{{ globals.spawn * spawn.gain }}に
-            <div class="upgrade-btn" @click="spawn.do">
-              グレードアップ
-            </div>
-          </div>
-        </Transition>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
-import '@/assets/style/tool.css'
+import '@/assets/style/tools/main.css'
+
 import { globals } from '@/globals'
 import { worth } from '@/composables/button/worth'
 import { spawn } from '@/composables/button/spawn'
 </script>
 
-<style scoped>
-.tool {
-  background: #f5f5f5;
-  padding: 8px;
-}
-</style>
+<template>
+  <div id="wallet">
+    所持金：{{ globals.wallet }}<br>
+    1つ当たりの収入：{{ globals.worth }}<br>
+    お金のスポーン頻度：{{ globals.spawn }}
+  </div>
+
+  <label class="menu">
+    <input type="checkbox" class="menu-checkbox">
+    <span class="chevron"></span>
+  </label>
+
+  <div id="toolbar">
+    <div class="wallet-space"></div>
+
+    <div id="buildings-wrapper">
+      <div class="building-container">
+        <div class="main-button">
+          worth
+        </div>
+        <div class="drawer">
+          <p>今のレベル</p>
+          <p>{{ worth.level }}</p>
+          <p>アップグレード費用</p>
+          <p>{{ worth.cost }}</p>
+          <p>収入の変化</p>
+          <p>{{ globals.worth }} → {{ globals.worth * worth.gain }}</p>
+          <div class="upgrade-button" @click=" worth.boost ">
+            グレードアップ
+          </div>
+        </div>
+      </div>
+
+      <div class="building-container">
+        <div class="main-button">
+          spawn
+        </div>
+        <div class="drawer">
+          <p>今のレベル</p>
+          <p>{{ spawn.level }}</p>
+          <p>アップグレード費用</p>
+          <p>{{ spawn.cost }}</p>
+          <p>スポーン頻度の変化</p>
+          <p>{{ globals.spawn }} → {{ globals.spawn * spawn.gain }}</p>
+          <div class="upgrade-button" @click=" spawn.boost ">
+            グレードアップ
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="credit">
+    クレジット～ただのスペース埋め～<br>
+    製作者：奏、はし<br>
+    (ここに画像とか入れるか？の気持ち)
+  </div>
+
+</template>
