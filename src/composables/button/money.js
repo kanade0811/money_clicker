@@ -1,16 +1,37 @@
 import { ref } from "vue";
 import { globals } from "@/globals";
 
-let nextId = 1; 
-const MAX_MONEY = 50;
+let nextId = 1;
 
 export function useMoney() {
   const moneys = ref([]);
 
-  function spawnMoney(fieldRef)  {
-  if (moneys.value.length >= MAX_MONEY) return;
+  //  最大数を画面サイズから計算
+  function getMaxMoney(field) {
+    const width = field.clientWidth;
+    const height = field.clientHeight;
+
+    return Math.floor((width * height) / 15000); // ←調整OK
+  }
+
+  function spawnMoney(fieldRef) {
+  console.log({
+  wallet: globals.wallet,
+  worth: globals.worth,
+  autoRate: globals.autoRate,
+  calc: globals.worth * globals.autoRate
+});
+    
     const field = fieldRef.value;
     if (!field) return;
+
+    const max = getMaxMoney(field);
+
+    //  上限超えたら自動回収
+    if (moneys.value.length >= max) {
+      globals.wallet += globals.worth * globals.autoRate;
+      return;
+    }
 
     const width = field.clientWidth;
     const height = field.clientHeight;
